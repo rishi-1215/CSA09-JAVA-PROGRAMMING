@@ -1,0 +1,38 @@
+public class ConfusionMatrix {
+    public static void main(String[] args) {
+        int[][] labels = {
+                {1, 1, 0, 0, 1},
+                {0, 1, 0, 1, 1}
+        };
+
+        int actualClass = 0; 
+        int predictedClass = 1;
+
+        int TP = 0, TN = 0, FP = 0, FN = 0;
+        for (int i = 0; i < labels.length; i++) {
+            if (labels[i][actualClass] == 1 && labels[i][predictedClass] == 1) {
+                TP++;
+            } else if (labels[i][actualClass] == 0 && labels[i][predictedClass] == 0) {
+                TN++;
+            } else if (labels[i][actualClass] == 0 && labels[i][predictedClass] == 1) {
+                FP++;
+            } else if (labels[i][actualClass] == 1 && labels[i][predictedClass] == 0) {
+                FN++;
+            }
+        }
+
+        double precision = (double) TP / (TP + FP);
+        double recall = (double) TP / (TP + FN);
+        double F1_score = 2 * (precision * recall) / (precision + recall);
+        System.out.println("Confusion Matrix:");
+        System.out.println("  Predicted \\ Actual");
+        System.out.println("           0        1");
+        System.out.println("0         " + TN + "        " + FP);
+        System.out.println("1         " + FN + "        " + TP);
+        System.out.println("\nTrue Positive (TP): " + TP);
+        System.out.println("True Negative (TN): " + TN);
+        System.out.println("False Positive (FP): " + FP);
+        System.out.println("False Negative (FN): " + FN);
+        System.out.println("F1-score: " + F1_score);
+    }
+}
