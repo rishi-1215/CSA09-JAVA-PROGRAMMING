@@ -1,0 +1,49 @@
+public class StringExample {
+
+    public static void main(String[] args) {
+        
+        String str1 = "Hello"; 
+        String str2 = new String("World"); 
+
+        System.out.println("String Constructors:");
+        System.out.println("str1: " + str1);
+        System.out.println("str2: " + str2);
+
+        
+        String str = "   Hello, World!   ";
+
+        
+        int length = str.length();
+        System.out.println("\nString Methods:");
+        System.out.println("Length of str: " + length);
+
+       
+        String trimmedString = str.trim();
+        System.out.println("Trimmed string: \"" + trimmedString + "\"");
+
+
+        String substring = str.substring(7, 12);
+        System.out.println("Substring from index 7 to 12: " + substring);
+
+        
+        String uppercase = str.toUpperCase();
+        String lowercase = str.toLowerCase();
+        System.out.println("Uppercase string: " + uppercase);
+        System.out.println("Lowercase string: " + lowercase);
+
+        
+        int indexOfWorld = str.indexOf("World");
+        System.out.println("Index of 'World' in str: " + indexOfWorld);
+
+        
+        String replacedString = str.replace("World", "Universe");
+        System.out.println("String after replacement: " + replacedString);
+
+        
+        String[] parts = str.split(", ");
+        System.out.println("Split string parts:");
+        for (String part : parts) {
+            System.out.println(part);
+        }
+    }
+}
