@@ -1,0 +1,39 @@
+public class DataTypeConversionExample {
+
+    public static void main(String[] args) {
+    
+        int intValue = 100;
+        long longValue = intValue; 
+
+        float floatValue = longValue; 
+        double doubleValue = floatValue;
+
+        System.out.println("Implicit conversions:");
+        System.out.println("int to long: " + longValue);
+        System.out.println("long to float: " + floatValue);
+        System.out.println("float to double: " + doubleValue);
+
+
+        double largeDoubleValue = 123456789.987654321;
+        float largeFloatValue = (float) largeDoubleValue; 
+
+        long largeLongValue = (long) largeDoubleValue; 
+        int largeIntValue = (int) largeLongValue; 
+
+        System.out.println("\nExplicit conversions:");
+        System.out.println("double to float: " + largeFloatValue);
+        System.out.println("double to long: " + largeLongValue);
+        System.out.println("long to int: " + largeIntValue);
+
+       
+        int intValueOverflow = Integer.MAX_VALUE; 
+        intValueOverflow = intValueOverflow + 1; 
+        System.out.println("\nOverflow example:");
+        System.out.println("Overflowed int value: " + intValueOverflow);
+
+        byte byteValueUnderflow = Byte.MIN_VALUE; 
+        byteValueUnderflow = (byte) (byteValueUnderflow - 1); 
+        System.out.println("\nUnderflow example:");
+        System.out.println("Underflowed byte value: " + byteValueUnderflow);
+    }
+}
