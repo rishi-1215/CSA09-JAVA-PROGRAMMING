@@ -1,0 +1,13 @@
+public class PrintSkippingNumbers {
+
+    public static void main(String[] args) {
+        int m = 50;
+        int n = 100;
+        int k = 7;
+
+        // Print numbers from M to N skipping K numbers in between
+        for (int i = m; i <= n; i += k + 1) {
+            System.out.print(i + " ");
+        }
+    }
+}
