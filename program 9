@@ -1,0 +1,25 @@
+public class EvenFibonacciSum {
+
+    public static void main(String[] args) {
+        int n = 4; 
+        long evenSum = getEvenFibonacciSum(n);
+        System.out.println("Sum of even Fibonacci numbers up to " + n + " is: " + evenSum);
+    }
+
+    public static long getEvenFibonacciSum(int n) {
+        long sum = 0;
+        long fib1 = 1; 
+        long fib2 = 1; 
+
+        while (fib1 <= n) {
+            if (fib1 % 2 == 0) { 
+                sum += fib1; 
+            }
+            long fib3 = fib1 + fib2;
+            fib1 = fib2; 
+            fib2 = fib3; 
+        }
+
+        return sum;
+    }
+}
