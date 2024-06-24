@@ -1,0 +1,21 @@
+public class InvertedFullPyramid {
+    public static void main(String[] args) {
+        int rows = 5; // Number of rows in the pyramid
+        
+        // Outer loop for rows
+        for (int i = 0; i < rows; i++) {
+            // Inner loop 1: for spaces before stars
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            
+            // Inner loop 2: for stars
+            for (int k = 0; k < 2 * (rows - i) - 1; k++) {
+                System.out.print("*");
+            }
+            
+            // Move to the next line after each row is printed
+            System.out.println();
+        }
+    }
+}
