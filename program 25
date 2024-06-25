@@ -4,16 +4,11 @@ public class CountVowels {
         int numVowels = countVowels(inputStatement);
         System.out.println("Number of vowels = " + numVowels);
     }
-    
     public static int countVowels(String statement) {
-        // Define the vowels as a string
         String vowels = "aeiouAEIOU";
         int vowelCount = 0;
-        
-        // Iterate through each character in the statement
         for (int i = 0; i < statement.length(); i++) {
             char ch = statement.charAt(i);
-            // Check if the character is a vowel
             if (vowels.indexOf(ch) != -1) {
                 vowelCount++;
             }
