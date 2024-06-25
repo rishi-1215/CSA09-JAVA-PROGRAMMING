@@ -1,0 +1,21 @@
+public class PerfectNumberChecker {
+    public static void main(String[] args) {
+        int number = 28; // Given number to check
+        
+        int sum = 0;
+        
+        // Find sum of all proper divisors
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                sum += i;
+            }
+        }
+        
+        // Check if sum of proper divisors equals the number itself
+        if (sum == number) {
+            System.out.println("It's a Perfect Number");
+        } else {
+            System.out.println("It's not a Perfect Number");
+        }
+    }
+}
