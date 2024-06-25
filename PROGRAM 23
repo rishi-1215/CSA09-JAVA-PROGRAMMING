@@ -1,0 +1,16 @@
+public class NumberOfFactors {
+    public static void main(String[] args) {
+        int number = 100; // Given number
+        
+        int countFactors = 0;
+        
+        // Iterate through all numbers from 1 to number
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                countFactors++;
+            }
+        }
+        
+        System.out.println("Number of factors = " + countFactors);
+    }
+}
