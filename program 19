@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class MeanMedianMode {
+    public static void main(String[] args) {
+        int[] array = {16, 18, 27, 16, 23, 21, 19};
+        
+        // Calculate Mean
+        double mean = calculateMean(array);
+        System.out.println("Mean: " + mean);
+        
+        // Calculate Median
+        double median = calculateMedian(array);
+        System.out.println("Median: " + median);
+        
+        // Calculate Mode
+        int mode = calculateMode(array);
+        System.out.println("Mode: " + mode);
+    }
+    
+    // Function to calculate Mean
+    public static double calculateMean(int[] array) {
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        return (double) sum / array.length;
+    }
+    
+    // Function to calculate Median
+    public static double calculateMedian(int[] array) {
+        Arrays.sort(array);
+        int n = array.length;
+        if (n % 2 == 0) {
+            return (double) (array[n/2 - 1] + array[n/2]) / 2.0;
+        } else {
+            return (double) array[n/2];
+        }
+    }
+    
+    // Function to calculate Mode
+    public static int calculateMode(int[] array) {
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for (int num : array) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+        
+        int mode = 0;
+        int maxFreq = 0;
+        for (Map.Entry<Integer, Integer> entry : freqMap.entrySet()) {
+            if (entry.getValue() > maxFreq) {
+                maxFreq = entry.getValue();
+                mode = entry.getKey();
+            }
+        }
+        
+        return mode;
+    }
+}
