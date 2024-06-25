@@ -1,0 +1,14 @@
+public class PrintPattern {
+    public static void main(String[] args) {
+        char ch = '%'; // Character to be printed
+        int maxTimes = 3; // Maximum number of times to print
+        
+        // Print the pattern
+        for (int i = 1; i <= maxTimes; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(ch + " ");
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+}
