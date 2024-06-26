@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Choose an option:");
+        System.out.println("1. Check if a string is palindrome");
+        System.out.println("2. Check if a number is palindrome");
+        System.out.print("Enter your choice (1 or 2): ");
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        
+        switch (choice) {
+            case 1:
+                System.out.print("Enter the string: ");
+                String str = scanner.nextLine();
+                if (isPalindromeString(str)) {
+                    System.out.println("Palindrome");
+                } else {
+                    System.out.println("Not a Palindrome");
+                }
+                break;
+            case 2:
+                System.out.print("Enter the number: ");
+                int number = scanner.nextInt();
+                if (isPalindromeNumber(number)) {
+                    System.out.println("Palindrome");
+                } else {
+                    System.out.println("Not a Palindrome");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice");
+                break;
+        }
+        
+        scanner.close();
+    }
+    
+    // Function to check if a string is palindrome
+    public static boolean isPalindromeString(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+        
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        
+        return true;
+    }
+    
+    // Function to check if a number is palindrome
+    public static boolean isPalindromeNumber(int number) {
+        int originalNumber = number;
+        int reversedNumber = 0;
+        
+        while (number > 0) {
+            int digit = number % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            number /= 10;
+        }
+        
+        return originalNumber == reversedNumber;
+    }
+}
