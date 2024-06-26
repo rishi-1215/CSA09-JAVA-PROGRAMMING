@@ -1,0 +1,9 @@
+public class DecimaltoBinaryOctal{
+    public static void main(String args[]){
+        int decimal=15;
+        String binary=Integer.toBinaryString(decimal); 
+        String octal=Integer.toOctalString(decimal);
+        System.out.println("binary number is:"+binary);
+        System.out.println("octal number is:"+octal);
+    }
+}
