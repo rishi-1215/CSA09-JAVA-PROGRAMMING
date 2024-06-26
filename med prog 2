@@ -1,0 +1,31 @@
+import java.util.Arrays;
+public class MaxMinSumDiff {
+    public static void main(String[] args) {
+        int[] array = {14, 16, 87, 36, 25, 89, 34};
+        int M = 1; // Mth maximum number (1-based index)
+        int N = 3; // Nth minimum number (1-based index)
+        int mthMax = findMthMaximum(array, M);
+        // Find Nth minimum number
+        int nthMin = findNthMinimum(array, N);
+        // Calculate sum and difference
+        int sum = mthMax + nthMin;
+        int difference = mthMax - nthMin;
+        // Output results
+        System.out.println("1st Maximum Number = " + mthMax);
+        System.out.println("3rd Minimum Number = " + nthMin);
+        System.out.println("Sum = " + sum);
+        System.out.println("Difference = " + difference);
+    }
+    // Function to find Mth maximum number in array (1-based index)
+    public static int findMthMaximum(int[] array, int M) {
+        Arrays.sort(array);
+        // Mth maximum is located at (array.length - M) index after sorting
+        return array[array.length - M];
+    }
+    // Function to find Nth minimum number in array (1-based index)
+    public static int findNthMinimum(int[] array, int N) {
+        Arrays.sort(array);
+        // Nth minimum is located at (N - 1) index after sorting
+        return array[N - 1];
+    }
+}
